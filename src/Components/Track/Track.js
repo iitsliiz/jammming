@@ -13,7 +13,7 @@ class Track extends React.Component{
         
     }
     addTrack(){
-        this.props.onAdd(this.props.playlist) ;
+        this.props.onAdd(this.props.track) ;
     }
 
     removeTrack(){
@@ -22,16 +22,19 @@ class Track extends React.Component{
     
    
     renderAction(){
-        if(isRemoval === true){
-        <button 
-            className="Track-Action" 
-            onClick={this.removeTrack} > - </button>
-        }else if(isRemoval === false) {
-        <button 
-            className="Track-Action" 
-            onClick={this.addTrack}> + </button>
-        }
-        }
+        return (
+            <div>
+                this.props.isRemoval ?
+                  <button 
+                    className="Track-Action" 
+                    onClick={this.removeTrack} > - </button>
+                : <button 
+                    className="Track-Action" 
+                    onClick={this.addTrack}> + </button>
+            </div>
+        );
+    }
+        
     render(){     
         return(
             <div>
@@ -40,7 +43,7 @@ class Track extends React.Component{
                 <h3>{this.props.track.name}</h3>
                 <p>{this.props.track.artist} | {this.props.track.album}</p>
                 </div>
-                <button className="Track-action">{this.renderAction()}</button>
+                    {this.renderAction()}
                 </div>
             </div>
         );
