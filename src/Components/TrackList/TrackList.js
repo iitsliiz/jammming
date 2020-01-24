@@ -4,18 +4,14 @@ import Track from "../Track/Track";
 
 
 class TrackList extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            playlistTracks: []
-    }}
-
+    
+   
     render(){
         return (
             <div className="TrackList">
-               {this.state.playlistTracks.map(track =>{ 
-                  return <Track key={track.id} 
-                                  track={track}
+               {this.props.track.map(track =>{ 
+                  return <Track   key={track.id}
+                                    track={track}
                                   onAdd={this.props.onAdd} 
                                   onRemove={this.props.onRemove}
                                   isRemoval={this.props.isRemoval}
