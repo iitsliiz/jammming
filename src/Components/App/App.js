@@ -14,6 +14,7 @@ class App extends React.Component{
           }],
         playlistName: '',
         playlistTracks: [{
+          id: 0,
           name:'', 
           artist: '', 
           album: ''
@@ -89,7 +90,7 @@ class App extends React.Component{
         />
            <div className="App-playlist">
            <SearchResults searchResults={this.state.searchResults} onAdd={this.state.addTrack}/>
-           <Playlist  onSave={this.state.savePlaylist} onNameChange={this.state.updatePlaylistName} onRemove={this.state.removeTrack} playlistName={this.state.playlistName} playlistTracks={this.playlistTracks}/>
+           <Playlist  onSave={this.state.savePlaylist} onNameChange={this.state.updatePlaylistName} onRemove={this.state.removeTrack} playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
           
         </div>
     </div>
